@@ -24,12 +24,6 @@ function dispalyDiv(numberCases){
 })
 }
 
-
-
-
-
-
-
 const divs = document.querySelectorAll('div#square')
 divs.forEach(div => {
     div.addEventListener('mouseover',function(){
@@ -58,3 +52,5 @@ buttons.forEach(button => {
         dispalyDiv(e.target.className);
         })
 });
+
+

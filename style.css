@@ -67,6 +67,8 @@ div#button{
     height: 2rem;
     border: solid;
     border-radius: 1rem;
+    background-color: aliceblue;
+    
 }
 
 div#clearButton{
