@@ -31,7 +31,7 @@ div div#sketch{
 
 div div#control{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
     border: solid;
     width: 30rem;
@@ -39,6 +39,7 @@ div div#control{
     align-self: center;
     margin: 1rem;
     border-radius: 1rem;
+
 }
 
 div#sketch div{
@@ -56,15 +57,24 @@ div#controlBar{
     width: 7rem;
     height: 5px;
     border: solid;
-    margin-left: 10px
+    margin-left: 10px;
+    border-radius: 1rem;
+    
 }
 div#button{
     display: flex;
     width: 1rem;
     height: 2rem;
     border: solid;
+    border-radius: 1rem;
 }
 
-
-
+div#clearButton{
+    display: flex;
+    width: 5rem;
+    height: 2rem;
+    border: solid;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
 }

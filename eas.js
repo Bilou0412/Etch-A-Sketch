@@ -25,8 +25,15 @@ dispalyDiv(numberCase);
 const divs = document.querySelectorAll('div#square')
 
 
+divs.forEach(div => {
+    div.addEventListener('mouseover',function(){
+    div.style.cssText = `background-color : black ;width:${doWidthDiv(numberCase)}rem ;height:${doWidthDiv(numberCase)}rem `
+    });
+})
+
+const clearButton = document.querySelector('#clearButton')
+clearButton.addEventListener('click',function(){
     divs.forEach(div => {
-        div.addEventListener('mouseover',function(){
-        div.style.cssText = `background-color : black ;width:${doWidthDiv(numberCase)}rem ;height:${doWidthDiv(numberCase)}rem `
-        });
+        div.style.cssText = `background-color : white ;width:${doWidthDiv(numberCase)}rem ;height:${doWidthDiv(numberCase)}rem `
+    })
 })
