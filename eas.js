@@ -22,6 +22,7 @@ function dispalyDiv(numberCases){
 
 dispalyDiv(numberCase);
 
+
 const divs = document.querySelectorAll('div#square')
 
 
