@@ -1,11 +1,10 @@
 const sketch = document.querySelector('div#sketch');
-let numberCase = 0;
+let numberCases = 0;
 
-numberCase = prompt('Combiens de case veux tu ?');
+
 
 function doWidthDiv(number){
     let y = 900/number
-    
     return Math.sqrt(y);
 }
 
@@ -14,27 +13,48 @@ function dispalyDiv(numberCases){
     for( i=0 ; i < numberCases ; i++){
         const div = document.createElement('div');
         div.setAttribute('id', 'square')
-        div.style.cssText = `width:${doWidthDiv(numberCase)}rem ;height:${doWidthDiv(numberCase)}rem `
+        div.style.cssText = `width:${doWidthDiv(numberCases)}rem ;height:${doWidthDiv(numberCases)}rem `
         sketch.appendChild(div)
     }
+    const divs = document.querySelectorAll('div#square')
+    divs.forEach(div => {
+    div.addEventListener('mouseover',function(){
+    div.style.cssText = `background-color : black ;width:${doWidthDiv(numberCases)}rem ;height:${doWidthDiv(numberCases)}rem `
+    });
+})
 }
 
 
-dispalyDiv(numberCase);
+
+
+
 
 
 const divs = document.querySelectorAll('div#square')
-
-
 divs.forEach(div => {
     div.addEventListener('mouseover',function(){
-    div.style.cssText = `background-color : black ;width:${doWidthDiv(numberCase)}rem ;height:${doWidthDiv(numberCase)}rem `
+    div.style.cssText = `background-color : black ;width:${doWidthDiv(numberCases)}rem ;height:${doWidthDiv(numberCases)}rem `
     });
 })
 
 const clearButton = document.querySelector('#clearButton')
 clearButton.addEventListener('click',function(){
+    const divs = document.querySelectorAll('div#square')
     divs.forEach(div => {
-        div.style.cssText = `background-color : white ;width:${doWidthDiv(numberCase)}rem ;height:${doWidthDiv(numberCase)}rem `
+        div.style.cssText = `background-color : white ;width:${doWidthDiv(numberCases)}rem ;height:${doWidthDiv(numberCases)}rem `
     })
 })
+
+const buttons = document.querySelectorAll('#button')
+
+buttons.forEach(button => {
+    button.addEventListener('click',function(e){
+        const divs = document.querySelectorAll('div#square')
+        divs.forEach(div => {
+            const sketch = document.querySelector('div#sketch');
+            sketch.removeChild(div);
+        })
+        numberCases = (e.target.className);
+        dispalyDiv(e.target.className);
+        })
+});
